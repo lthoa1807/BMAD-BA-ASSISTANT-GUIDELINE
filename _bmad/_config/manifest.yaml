@@ -1,0 +1,26 @@
+installation:
+  version: 6.7.1
+  installDate: 2026-05-21T22:21:36.629Z
+  lastUpdated: 2026-05-22T23:03:05.153Z
+modules:
+  - name: core
+    version: 6.7.1
+    installDate: 2026-05-21T22:21:36.568Z
+    lastUpdated: 2026-05-22T23:03:05.132Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: ba-assistant
+    version: 0.2.0
+    installDate: 2026-05-21T22:21:36.588Z
+    lastUpdated: 2026-05-22T23:03:05.153Z
+    source: unknown
+    npmPackage: null
+    repoUrl: null
+ides:
+  - claude-code
+  - codex
+  - github-copilot
+  - gemini
+  - antigravity
+  - opencode
