@@ -1,24 +1,41 @@
 installation:
   version: 6.7.1
   installDate: 2026-05-21T22:21:36.629Z
-  lastUpdated: 2026-05-22T23:03:05.153Z
+  lastUpdated: 2026-05-25T08:11:53.108Z
 modules:
   - name: core
     version: 6.7.1
     installDate: 2026-05-21T22:21:36.568Z
-    lastUpdated: 2026-05-22T23:03:05.132Z
+    lastUpdated: 2026-05-25T08:11:53.099Z
     source: built-in
     npmPackage: null
     repoUrl: null
   - name: ba-assistant
-    version: 0.2.0
+    version: 0.5.0
     installDate: 2026-05-21T22:21:36.588Z
-    lastUpdated: 2026-05-22T23:03:05.153Z
+    lastUpdated: 2026-05-25T08:11:53.103Z
     source: unknown
     npmPackage: null
     repoUrl: null
+  - name: bmb
+    version: v1.8.1
+    installDate: 2026-05-25T08:11:52.969Z
+    lastUpdated: 2026-05-25T08:11:53.106Z
+    source: external
+    npmPackage: bmad-builder
+    repoUrl: https://github.com/bmad-code-org/bmad-builder
+    channel: stable
+    sha: 3410d952eafe621f31fcdf4dd5efb2b06690a306
+  - name: cis
+    version: v0.2.1
+    installDate: 2026-05-25T08:11:52.998Z
+    lastUpdated: 2026-05-25T08:11:53.108Z
+    source: external
+    npmPackage: bmad-creative-intelligence-suite
+    repoUrl: https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite
+    channel: stable
+    sha: 07a8dd03d196a762f21c241d985293fe5b0f90e7
 ides:
-  - claude-code
   - codex
   - github-copilot
   - gemini

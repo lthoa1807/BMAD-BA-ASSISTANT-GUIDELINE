@@ -1,0 +1,60 @@
+{
+  "output_file": "Bien_ban_noi_dung_cuoc_hop_COCOA_FAST.docx",
+  "title": "BIÊN BẢN NỘI DUNG CUỘC HỌP",
+  "subtitle": "V/v: Rà soát số liệu và thống nhất các nội dung hỗ trợ tiếp theo",
+  "meeting_info": {
+    "Nội dung": "Rà soát số liệu báo cáo, các nội dung đã hỗ trợ và các công việc tiếp tục xử lý",
+    "Thời gian": "[Bổ sung thời gian họp]",
+    "Hình thức/Địa điểm": "[Bổ sung hình thức hoặc địa điểm họp]",
+    "Đơn vị khách hàng": "COCOA",
+    "Đơn vị hỗ trợ": "FAST"
+  },
+  "agreed_items": [
+    "Hai bên đã kiểm tra và chốt số liệu Báo cáo tài chính Quý 1/2026 đã lên đúng.",
+    "FAST đã hỗ trợ hướng dẫn khách hàng các nội dung liên quan đến giá thành có ở dang.",
+    "FAST đã thực hiện fix chức năng tính giá trung bình không theo lô."
+  ],
+  "follow_up_items": [
+    {
+      "content": "Khai báo chỉ tiêu báo cáo đặc thù. FAST đã hướng dẫn cách khai báo và chờ COCOA phản hồi từng chỉ tiêu mapping với tài khoản cụ thể, có theo bộ phận hay không để FAST hỗ trợ khai báo.",
+      "owner": "COCOA/FAST",
+      "deadline_or_response": "COCOA gửi lại FAST trước Thứ Ba, ngày 16/06/2026."
+    },
+    {
+      "content": "Số bill, số hóa đơn trên Nhật ký chung.",
+      "owner": "COCOA",
+      "deadline_or_response": "COCOA phản hồi các thông tin cần lấy lên báo cáo."
+    },
+    {
+      "content": "Thông tin người duyệt trên mẫu in PO.",
+      "owner": "FAST",
+      "deadline_or_response": "FAST hỗ trợ xử lý trước ngày 16/06/2026."
+    },
+    {
+      "content": "Chức vụ trên mẫu in PO.",
+      "owner": "FAST",
+      "deadline_or_response": "FAST hỗ trợ xử lý trước ngày 16/06/2026."
+    },
+    {
+      "content": "Thêm cột Mã cửa hàng trên báo cáo bảng kê chứng từ theo bộ phận.",
+      "owner": "FAST",
+      "deadline_or_response": "FAST hỗ trợ xử lý trước ngày 16/06/2026."
+    },
+    {
+      "content": "Mẫu in đề nghị chi tiền: thêm trường Số chứng từ trên mẫu in và thêm cột Số hóa đơn do người dùng tự nhập.",
+      "owner": "FAST",
+      "deadline_or_response": "FAST hỗ trợ xử lý trước ngày 16/06/2026."
+    },
+    {
+      "content": "Mẫu in phiếu nhập kho: thêm vùng ký và thêm lý do nhập.",
+      "owner": "FAST",
+      "deadline_or_response": "FAST hỗ trợ xử lý trước ngày 16/06/2026."
+    }
+  ],
+  "conclusion": [
+    "Hai bên thống nhất các nội dung đã kiểm tra, các hạng mục FAST đã hỗ trợ và danh sách công việc tiếp tục xử lý như trên. COCOA sẽ gửi bổ sung thông tin mapping chỉ tiêu báo cáo đặc thù và thông tin cần lấy lên Nhật ký chung để FAST tiếp tục hỗ trợ thực hiện.",
+    "Biên bản được lập để các bên cùng theo dõi và phối hợp thực hiện."
+  ],
+  "signature_left": "ĐẠI DIỆN COCOA",
+  "signature_right": "ĐẠI DIỆN FAST"
+}

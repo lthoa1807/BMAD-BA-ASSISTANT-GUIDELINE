@@ -1,0 +1,28 @@
+{
+  "output_file": "Bien_ban_noi_dung_cuoc_hop.docx",
+  "title": "BIÊN BẢN NỘI DUNG CUỘC HỌP",
+  "subtitle": "V/v: [Bổ sung nội dung chính của cuộc họp]",
+  "meeting_info": {
+    "Nội dung": "[Bổ sung nội dung cuộc họp]",
+    "Thời gian": "[Bổ sung thời gian họp]",
+    "Hình thức/Địa điểm": "[Bổ sung hình thức hoặc địa điểm họp]",
+    "Đơn vị khách hàng": "[Tên khách hàng]",
+    "Đơn vị hỗ trợ": "FAST"
+  },
+  "agreed_items": [
+    "[Nội dung đã thống nhất hoặc đã hoàn thành]"
+  ],
+  "follow_up_items": [
+    {
+      "content": "[Mô tả công việc cần xử lý tiếp theo]",
+      "owner": "[Đơn vị phụ trách]",
+      "deadline_or_response": "[Thông tin cần phản hồi hoặc thời hạn hoàn thành]"
+    }
+  ],
+  "conclusion": [
+    "Hai bên thống nhất các nội dung đã kiểm tra, các hạng mục đã hỗ trợ và danh sách công việc tiếp tục xử lý như trên.",
+    "Biên bản được lập để các bên cùng theo dõi và phối hợp thực hiện."
+  ],
+  "signature_left": "ĐẠI DIỆN KHÁCH HÀNG",
+  "signature_right": "ĐẠI DIỆN FAST"
+}

@@ -1,0 +1,33 @@
+# BA Worklog Index
+
+This index tracks BMad BA workflow activity, artifact paths, decisions, risks, open questions, and recommended next actions.
+
+## Entries
+
+| ID | Date | Workflow | Status | Artifact Path | Notes |
+| --- | --- | --- | --- | --- | --- |
+| KNOW-001 | 2026-05-23 | Knowledge learning | In progress | `ba_artifacts/knowledge/systems/FA/notes/` | Fast Accounting cost report comparison knowledge base setup. |
+| DOC-ORG-001 | 2026-05-23 | Document organization | Completed | `ba_artifacts/documents/` | Created document lifecycle folders for samples, generated templates, working drafts, final documents, shared assets, and archive. |
+| DOC-TPL-001 | 2026-05-23 | Template generation | Completed | `ba_artifacts/documents/template-doc/user-guide/` | Generated reusable user guide template from `HDSD-Administrator-FBO.docx`. |
+| DOC-ORG-002 | 2026-05-23 | Document organization | Updated | `ba_artifacts/documents/incoming-doc/` | Incoming raw document folder moved out of `working-doc/` so input files and generated working drafts are separated clearly. |
+| DOC-GEN-001 | 2026-05-23 | Document generation | Draft generated | `ba_artifacts/documents/working-doc/fast-einvoice-account-guide/` | Generated user-guide draft from incoming Fast e-Invoice account document and linked 6 extracted images. |
+| DOC-FINAL-001 | 2026-05-23 | Document finalization | Final v0.1 created | `ba_artifacts/documents/final-doc/fast-einvoice-account-guide/` | Created final Markdown v0.1 from generated Fast e-Invoice account guide draft. |
+| DOC-FINAL-002 | 2026-05-23 | Document export | Word v0.1 created | `ba_artifacts/documents/final-doc/fast-einvoice-account-guide/fast-einvoice-account-guide-v0.1.docx` | Exported final Markdown to Word OpenXML with 6 embedded images. |
+| DOC-PROC-001 | 2026-05-23 | Process standardization | Completed | `ba_artifacts/documents/template-doc/user-guide/generation-workflow.md` | Standardized the observed Fast e-Invoice document generation flow into an end-to-end reusable workflow. |
+| DOC-PROC-002 | 2026-05-23 | Process standardization | Updated | `ba_artifacts/documents/final-doc/<document-name>/_complete-package/` | Packaging step clarified: collect source, template, working files, assets, final outputs, and manifest under each document's final folder; no separate `package-doc/`. |
+| DOC-PACK-001 | 2026-05-24 | Document packaging | Completed | `ba_artifacts/documents/final-doc/fast-einvoice-account-guide/_complete-package/v0.1/` | Collected Fast e-Invoice account guide v0.1 with source, templates, working files, 6 images, final outputs, and manifest under final-doc. |
+| DOC-PROC-003 | 2026-05-24 | Process standardization | Superseded | `ba_artifacts/documents/template-doc/user-guide/generation-workflow.md` | Added package completeness check and user-confirmed cleanup step for old working files. |
+| DOC-CLEAN-001 | 2026-05-24 | Document cleanup | Completed | `ba_artifacts/documents/final-doc/fast-einvoice-account-guide/_complete-package/v0.1/` | After user confirmation and package completeness check, removed old incoming file, working draft folder, and shared assets folder for Fast e-Invoice account guide. |
+| DOC-ORG-003 | 2026-05-24 | Document organization | Completed | `ba_artifacts/documents/incoming-doc/` | Simplified document workspace: `incoming-doc/` holds raw inputs, while `working-doc/` holds generated drafts only. |
+| DOC-PROC-004 | 2026-05-24 | Process standardization | Completed | `ba_artifacts/documents/document-creation-support-guide.md` | Added playbook for answering users who ask about document creation support and for applying the user-guide generation workflow. |
+| DOC-ORG-004 | 2026-05-24 | Document organization | Completed | `ba_artifacts/documents/template-doc/` | Renamed the document template folder and updated document workflow references. |
+| DOC-PROC-005 | 2026-05-24 | Process standardization | Completed | `ba_artifacts/documents/final-doc/<document-name>/_complete-package/` | Removed duplicate package input folder requirement; source input files are kept only under `source/`. |
+| ISSUE-001 | 2026-05-25 | BA issue check | Closed - Root Cause Confirmed | `ba_artifacts/issue-check/uom-conversion-ing-liq-000035/final/investigation-report.md` | Investigated UOM conversion issue for `ING-LIQ-000035`; confirmed PR customize stored `he_so = 1`, causing PO, PD1 and PND to inherit wrong quantity conversion. |
+| STRUCT-001 | 2026-05-25 | BMad structure fix | Completed | `ba_artifacts/knowledge/notes/bmad-folder-structure-fix-2026-05-25.md` | Aligned BMad source skill folders with manifests and configured BA artifacts to use `ba_artifacts/`. |
+| DOC-FBO-001 | 2026-05-25 | Short document production | Intake completed | `ba_artifacts/documents/working-doc/fbo-installation-guide/step-01-support-intake-notes.md` | Confirmed source `FBO installation.docx`, English IT audience, slug `fbo-installation-guide`, version `v0.1`; recorded missing technical details as open questions. |
+| DOC-FBO-002 | 2026-05-25 | Short document production | Template bootstrap completed | `ba_artifacts/documents/working-doc/fbo-installation-guide/step-02-template-bootstrap-notes.md` | Seeded missing runtime `short-doc` template from packaged resources; retained existing `user-guide` template as primary formatting guidance. |
+| DOC-FBO-003 | 2026-05-25 | Short document production | Source extraction completed | `ba_artifacts/documents/working-doc/fbo-installation-guide/step-03-source-extraction-notes.md` | Extracted 22 text blocks and 8 images from `FBO installation.docx`; mapped screenshots to prerequisite and installation sections. |
+| DOC-FBO-004 | 2026-05-25 | Short document production | Draft generated | `ba_artifacts/documents/working-doc/fbo-installation-guide/draft.md` | Generated English IT installation guide draft with 13 sections and 8 linked screenshots. |
+| DOC-FBO-005 | 2026-05-25 | Short document production | Review records completed | `ba_artifacts/documents/working-doc/fbo-installation-guide/review-notes.md` | Created assumptions, open questions, and review notes; draft is ready for v0.1 finalization with caveats retained. |
+| DOC-FBO-006 | 2026-05-25 | Short document production | Final Markdown v0.1 created | `ba_artifacts/documents/final-doc/fbo-installation-guide/fbo-installation-guide-v0.1.md` | Created review-ready final Markdown with 8 linked screenshots and open IT/FAST validation items retained. |
+| DOC-FBO-007 | 2026-05-25 | Short document production | Word v0.1 created | `ba_artifacts/documents/final-doc/fbo-installation-guide/fbo-installation-guide-v0.1.docx` | Exported final Markdown to Word OpenXML with 8 embedded images and verified required package parts. |
