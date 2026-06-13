@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-13",
+  "statusValues": [
+    "available",
+    "unknown",
+    "quota_limited",
+    "auth_failed",
+    "not_found",
+    "timeout",
+    "disabled"
+  ],
+  "subAgents": {
+    "bmad-ba-docx-template-production": {
+      "status": "available",
+      "skillPath": ".agents/skills/bmad-ba-docx-template-production/SKILL.md",
+      "commandPath": ".opencode/commands/bmad-ba-docx-template-production.md",
+      "description": "Reads a Word .docx sample, extracts content and layout format, builds a reusable complex DOCX template, then generates a new Word document from user-provided content using that template.",
+      "tasks": [
+        {
+          "id": "task-01-source-extraction",
+          "description": "Read a Word file, extract ordered content, tables, images, and visible formatting evidence.",
+          "recommendedModels": ["google/gemini-2.5-flash"]
+        },
+        {
+          "id": "task-02-template-build",
+          "description": "Build a reusable template from the extraction result, staying close to the source format and improving clarity where justified. The template supports complex formatting such as center alignment, tables, borders, shading, repeated headers, and signature blocks.",
+          "recommendedModels": ["google/gemini-2.5-flash", "openai/gpt-5.4"]
+        },
+        {
+          "id": "task-03-document-generation",
+          "description": "Map user-provided information into the approved template and generate a formatted Word document.",
+          "recommendedModels": ["openai/gpt-5.4-mini", "google/gemini-2.5-flash"]
+        }
+      ],
+      "fallbackModel": "opencode/mimo-v2.5-free",
+      "doNotUseModelsWithStatus": ["auth_failed", "quota_limited", "not_found", "timeout", "disabled"]
+    }
+  },
+  "models": {
+    "opencode/big-pickle": {
+      "provider": "opencode",
+      "status": "available",
+      "costTier": "free",
+      "strengths": ["general", "summary", "first-pass-analysis"],
+      "weaknesses": ["critical-reasoning", "security-review"],
+      "recommendedFor": ["general", "summarize", "docs-draft"],
+      "doNotUseFor": ["code-review", "architecture"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Free-tier model tested successfully."
+    },
+    "opencode/deepseek-v4-flash-free": {
+      "provider": "opencode",
+      "status": "available",
+      "costTier": "free",
+      "strengths": ["coding-light", "summary", "fallback"],
+      "weaknesses": ["complex-reasoning", "business-critical-review"],
+      "recommendedFor": ["code-small", "summarize", "general"],
+      "doNotUseFor": ["security-review", "architecture"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "General free fallback when primary low-cost models are unavailable."
+    },
+    "opencode/mimo-v2.5-free": {
+      "provider": "opencode",
+      "status": "available",
+      "costTier": "free",
+      "strengths": ["summary", "docs-draft", "general"],
+      "weaknesses": ["complex-code-edit", "critical-reasoning"],
+      "recommendedFor": ["docs-draft", "summarize", "general"],
+      "doNotUseFor": ["code-review", "sql-understand-high-risk"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Useful for low-risk drafting and summarization."
+    },
+    "opencode/nemotron-3-ultra-free": {
+      "provider": "opencode",
+      "status": "available",
+      "costTier": "free",
+      "strengths": ["docs-draft", "reasoning-light", "summary"],
+      "weaknesses": ["critical-code-review", "architecture"],
+      "recommendedFor": ["knowledge-doc", "docs-draft", "summarize"],
+      "doNotUseFor": ["security-review", "final-gate"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Good candidate for first-pass documentation drafts."
+    },
+    "opencode/north-mini-code-free": {
+      "provider": "opencode",
+      "status": "available",
+      "costTier": "free",
+      "strengths": ["coding-light", "small-edits", "test-helper"],
+      "weaknesses": ["large-refactor", "deep-review"],
+      "recommendedFor": ["code-small", "playwright-adjust"],
+      "doNotUseFor": ["architecture", "code-review-high-risk"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Preferred free coding model for small scoped edits."
+    },
+    "google/gemini-2.5-flash-lite": {
+      "provider": "google",
+      "status": "available",
+      "costTier": "low",
+      "strengths": ["fast-runner", "ui-evidence", "sql-exploration", "summary"],
+      "weaknesses": ["critical-reasoning", "hard-code-review"],
+      "recommendedFor": ["playwright-run", "playwright-review", "sql-explorer", "summarize"],
+      "doNotUseFor": ["architecture", "security-review"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "quota": {
+        "lastObservedRemaining": "87.8%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Primary low-cost model for runner/explorer style tasks."
+    },
+    "google/gemini-2.5-flash": {
+      "provider": "google",
+      "status": "available",
+      "costTier": "low",
+      "strengths": ["sql-understanding", "documentation", "balanced-reasoning", "vietnamese", "docx-format-analysis", "template-analysis"],
+      "weaknesses": ["highest-risk-review"],
+      "recommendedFor": ["sql-understand", "knowledge-doc", "ba-analysis", "docs-review", "docx-format-analysis", "template-analysis", "vietnamese-docs"],
+      "doNotUseFor": ["security-review-final"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "quota": {
+        "lastObservedRemaining": "100%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Balanced default for ERP analysis and documentation."
+    },
+    "google/gemini-3-flash-preview": {
+      "provider": "google",
+      "status": "unknown",
+      "costTier": "low",
+      "strengths": ["candidate-flash", "general"],
+      "weaknesses": ["untested"],
+      "recommendedFor": [],
+      "doNotUseFor": ["default-routing"],
+      "lastTest": {
+        "result": "not_tested",
+        "at": null,
+        "evidenceSource": null
+      },
+      "quota": {
+        "lastObservedRemaining": "100%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Catalog/quota observed, but no smoke test recorded yet."
+    },
+    "google/gemini-3.1-flash-lite": {
+      "provider": "google",
+      "status": "unknown",
+      "costTier": "low",
+      "strengths": ["current-agent-default", "runner", "explorer"],
+      "weaknesses": ["untested-in-this-routing-pass"],
+      "recommendedFor": ["playwright-run", "sql-explorer"],
+      "doNotUseFor": ["critical-review"],
+      "lastTest": {
+        "result": "not_tested",
+        "at": null,
+        "evidenceSource": null
+      },
+      "quota": {
+        "lastObservedRemaining": "87.8%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Currently configured in several OpenCode agents; leave as unknown until smoke-tested."
+    },
+    "google/gemini-3.1-flash-lite-preview": {
+      "provider": "google",
+      "status": "unknown",
+      "costTier": "low",
+      "strengths": ["current-agent-default", "analysis-light"],
+      "weaknesses": ["untested-in-this-routing-pass"],
+      "recommendedFor": ["sql-understand"],
+      "doNotUseFor": ["critical-review"],
+      "lastTest": {
+        "result": "not_tested",
+        "at": null,
+        "evidenceSource": null
+      },
+      "quota": {
+        "lastObservedRemaining": "87.8%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Currently configured for sql-understand; leave as unknown until smoke-tested."
+    },
+    "openai/gpt-5.4-mini": {
+      "provider": "openai",
+      "status": "available",
+      "costTier": "medium",
+      "strengths": ["coding", "sql-update", "structured-output", "docx-script-small", "template-json-generation"],
+      "weaknesses": ["highest-cost-sensitive-loops"],
+      "recommendedFor": ["code-small", "sql-update-mcp", "playwright-adjust", "docx-script-small", "template-json-generation"],
+      "doNotUseFor": ["bulk-runner-loop"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Good balanced coding and metadata update model."
+    },
+    "openai/gpt-5.4": {
+      "provider": "openai",
+      "status": "available",
+      "costTier": "high",
+      "strengths": ["code-review", "architecture", "hard-reasoning", "risk-analysis", "docx-template-architecture", "final-docx-review"],
+      "weaknesses": ["cost"],
+      "recommendedFor": ["code-review", "architecture", "final-gate", "sql-understand-high-risk", "docx-template-architecture", "final-docx-review"],
+      "doNotUseFor": ["bulk-runner-loop", "low-risk-summary"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Primary strong model for high-risk review and architecture."
+    },
+    "openai/gpt-5.5": {
+      "provider": "openai",
+      "status": "available",
+      "costTier": "high",
+      "strengths": ["critical-reasoning", "code-review", "architecture", "complex-debugging"],
+      "weaknesses": ["cost", "avoid-for-routine-loops"],
+      "recommendedFor": ["code-review-high-risk", "architecture", "security-review", "critical-decision"],
+      "doNotUseFor": ["bulk-runner-loop", "low-risk-summary"],
+      "lastTest": {
+        "result": "ok",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Reserve for the highest-risk work."
+    },
+    "qwen-code/coder-model": {
+      "provider": "qwen-code",
+      "status": "auth_failed",
+      "costTier": "unknown",
+      "strengths": ["coding-candidate"],
+      "weaknesses": ["auth-failed"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "invalid access token or token expired",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Do not route until auth is fixed."
+    },
+    "qwen-code/qwen3-coder-flash": {
+      "provider": "qwen-code",
+      "status": "auth_failed",
+      "costTier": "unknown",
+      "strengths": ["coding-candidate"],
+      "weaknesses": ["auth-failed"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "invalid access token or token expired",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Do not route until auth is fixed."
+    },
+    "qwen-code/qwen3-coder-plus": {
+      "provider": "qwen-code",
+      "status": "auth_failed",
+      "costTier": "unknown",
+      "strengths": ["coding-candidate"],
+      "weaknesses": ["auth-failed"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "invalid access token or token expired",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Do not route until auth is fixed."
+    },
+    "github-copilot/claude-haiku-4.5": {
+      "provider": "github-copilot",
+      "status": "quota_limited",
+      "costTier": "unknown",
+      "strengths": ["general-candidate"],
+      "weaknesses": ["quota-exceeded"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "monthly quota exceeded",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Do not route until quota resets."
+    },
+    "github-copilot/gpt-5-mini": {
+      "provider": "github-copilot",
+      "status": "quota_limited",
+      "costTier": "unknown",
+      "strengths": ["coding-candidate"],
+      "weaknesses": ["quota-exceeded"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "monthly quota exceeded",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Do not route until quota resets."
+    },
+    "google/gemini-3.5-flash": {
+      "provider": "google",
+      "status": "not_found",
+      "costTier": "unknown",
+      "strengths": [],
+      "weaknesses": ["entity-not-found"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "requested entity was not found",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Catalog entry was not callable at test time."
+    },
+    "google/gemini-flash-latest": {
+      "provider": "google",
+      "status": "not_found",
+      "costTier": "unknown",
+      "strengths": [],
+      "weaknesses": ["entity-not-found"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "requested entity was not found",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Alias was not callable at test time."
+    },
+    "google/gemini-flash-lite-latest": {
+      "provider": "google",
+      "status": "not_found",
+      "costTier": "unknown",
+      "strengths": [],
+      "weaknesses": ["entity-not-found"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "requested entity was not found",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Alias was not callable at test time."
+    },
+    "google/gemma-4-26b-a4b-it": {
+      "provider": "google",
+      "status": "not_found",
+      "costTier": "unknown",
+      "strengths": [],
+      "weaknesses": ["entity-not-found"],
+      "recommendedFor": [],
+      "doNotUseFor": ["all"],
+      "lastTest": {
+        "result": "requested entity was not found",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "notes": "Catalog entry was not callable at test time."
+    },
+    "google/gemini-2.5-pro": {
+      "provider": "google",
+      "status": "timeout",
+      "costTier": "high",
+      "strengths": ["pro-reasoning-candidate"],
+      "weaknesses": ["timeout", "quota-limited-observed"],
+      "recommendedFor": [],
+      "doNotUseFor": ["default-routing"],
+      "lastTest": {
+        "result": "timeout after 120000 ms",
+        "at": "2026-06-13",
+        "evidenceSource": "opencode run smoke test"
+      },
+      "quota": {
+        "lastObservedRemaining": "0%",
+        "observedAt": "2026-06-13"
+      },
+      "notes": "Do not route until retested successfully."
+    }
+  }
+}

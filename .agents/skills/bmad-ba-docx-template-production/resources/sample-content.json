@@ -1,0 +1,30 @@
+{
+  "title": "BIÊN BẢN NỘI DUNG LÀM VIỆC",
+  "subtitle": "V/v: Thống nhất phạm vi hỗ trợ tài liệu mẫu",
+  "info": {
+    "Thời gian": "[Chưa cung cấp]",
+    "Địa điểm": "[Chưa cung cấp]",
+    "Thành phần tham dự": "[Chưa cung cấp]"
+  },
+  "agreed_items": [
+    "Hai bên thống nhất sử dụng file Word mẫu làm cơ sở xây dựng template tài liệu.",
+    "Template cần hỗ trợ căn giữa, bảng, tiêu đề và khối ký xác nhận."
+  ],
+  "follow_up_items": [
+    {
+      "content": "Cung cấp nội dung chính thức để sinh tài liệu theo template.",
+      "owner": "Khách hàng",
+      "deadline_or_response": "[Chưa cung cấp]"
+    },
+    {
+      "content": "Kiểm tra file Word đầu ra và phản hồi các điểm cần điều chỉnh.",
+      "owner": "FAST",
+      "deadline_or_response": "Sau khi sinh bản nháp"
+    }
+  ],
+  "conclusion": [
+    "Tài liệu được tạo từ template dùng để rà soát định dạng và nội dung trước khi phát hành chính thức."
+  ],
+  "signature_left": "ĐẠI DIỆN KHÁCH HÀNG",
+  "signature_right": "ĐẠI DIỆN FAST"
+}

@@ -5,3 +5,14 @@
 #
 # [agents.bmad-agent-pm]
 # description = "Prefers short, bulleted PRDs over narrative drafts."
+
+[modules.ba-assistant]
+ba_artifacts = "{project-root}/ba_artifacts"
+
+[agents.bmad-ba-docx-template-production]
+module = "ba-assistant"
+team = "business-analysis"
+name = "Tessa"
+title = "DOCX Template Production Specialist"
+icon = "DT"
+description = "Reads Word .docx samples, extracts content and visible formatting, builds reusable complex DOCX templates, and generates new customer-ready Word documents from user-provided content."

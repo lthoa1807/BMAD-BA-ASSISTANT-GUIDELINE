@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "required": ["metadata", "page", "fields", "blocks"],
+  "metadata": {
+    "templateName": "string",
+    "version": "string",
+    "description": "string",
+    "sourceDocument": "string",
+    "createdAt": "YYYY-MM-DD"
+  },
+  "page": {
+    "orientation": "portrait|landscape",
+    "size": "A4|letter",
+    "marginsCm": {
+      "top": "number",
+      "bottom": "number",
+      "left": "number",
+      "right": "number"
+    },
+    "defaultFont": "string",
+    "defaultFontSize": "number"
+  },
+  "styles": {
+    "paragraphStyles": {
+      "<styleName>": {
+        "bold": "boolean",
+        "italic": "boolean",
+        "fontSize": "number",
+        "alignment": "left|center|right|justify",
+        "spacingBefore": "number",
+        "spacingAfter": "number",
+        "lineSpacing": "number"
+      }
+    },
+    "tableStyles": {
+      "<styleName>": {
+        "alignment": "left|center|right",
+        "borderColor": "RRGGBB",
+        "headerFill": "RRGGBB",
+        "repeatHeader": "boolean"
+      }
+    }
+  },
+  "fields": [
+    {
+      "name": "string",
+      "label": "string",
+      "required": "boolean",
+      "type": "text|date|list|table|object"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph|heading|bullet_list|table|signature|image|spacer|page_break",
+      "text": "string with {{placeholders}}",
+      "style": "styleName",
+      "level": "number for heading",
+      "source": "list field for repeating blocks",
+      "columns": "table column definitions",
+      "rows": "static table rows"
+    }
+  ]
+}

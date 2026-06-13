@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "templateName": "sample-business-document",
+    "version": "0.1",
+    "description": "Sample Vietnamese business document template with centered title, info table, content sections, work table, and signature block.",
+    "sourceDocument": "manual-sample",
+    "createdAt": "2026-06-13"
+  },
+  "page": {
+    "orientation": "portrait",
+    "size": "A4",
+    "marginsCm": {
+      "top": 2.0,
+      "bottom": 2.0,
+      "left": 2.5,
+      "right": 2.0
+    },
+    "defaultFont": "Times New Roman",
+    "defaultFontSize": 12
+  },
+  "styles": {
+    "paragraphStyles": {
+      "title": {"bold": true, "fontSize": 16, "alignment": "center", "spacingAfter": 3, "lineSpacing": 1.15},
+      "subtitle": {"bold": true, "fontSize": 12, "alignment": "center", "spacingAfter": 12, "lineSpacing": 1.15},
+      "sectionHeading": {"bold": true, "fontSize": 13, "alignment": "left", "spacingBefore": 10, "spacingAfter": 6, "lineSpacing": 1.15},
+      "body": {"fontSize": 12, "alignment": "left", "spacingAfter": 6, "lineSpacing": 1.15}
+    },
+    "tableStyles": {
+      "infoTable": {"alignment": "center", "borderColor": "808080", "headerFill": "EDEDED", "repeatHeader": false},
+      "workTable": {"alignment": "center", "borderColor": "808080", "headerFill": "D9EAF7", "repeatHeader": true}
+    }
+  },
+  "fields": [
+    {"name": "title", "label": "Document title", "required": true, "type": "text"},
+    {"name": "subtitle", "label": "Document subtitle", "required": false, "type": "text"},
+    {"name": "info", "label": "Document information", "required": true, "type": "object"},
+    {"name": "agreed_items", "label": "Agreed items", "required": false, "type": "list"},
+    {"name": "follow_up_items", "label": "Follow-up work", "required": false, "type": "table"},
+    {"name": "conclusion", "label": "Conclusion", "required": false, "type": "list"}
+  ],
+  "blocks": [
+    {"type": "paragraph", "text": "{{title}}", "style": "title"},
+    {"type": "paragraph", "text": "{{subtitle}}", "style": "subtitle"},
+    {
+      "type": "table",
+      "style": "infoTable",
+      "source": "info",
+      "columns": [
+        {"header": "Thông tin", "key": "label", "widthCm": 4.0, "bold": true, "fill": "EDEDED"},
+        {"header": "Nội dung", "key": "value", "widthCm": 12.0}
+      ]
+    },
+    {"type": "heading", "text": "I. NỘI DUNG ĐÃ THỐNG NHẤT", "style": "sectionHeading", "level": 1},
+    {"type": "bullet_list", "source": "agreed_items", "style": "body"},
+    {"type": "heading", "text": "II. CÁC CÔNG VIỆC HỖ TRỢ XỬ LÝ TIẾP THEO", "style": "sectionHeading", "level": 1},
+    {
+      "type": "table",
+      "style": "workTable",
+      "source": "follow_up_items",
+      "columns": [
+        {"header": "STT", "key": "index", "widthCm": 1.2, "alignment": "center"},
+        {"header": "Nội dung công việc", "key": "content", "widthCm": 8.3},
+        {"header": "Đơn vị phụ trách", "key": "owner", "widthCm": 2.7, "alignment": "center"},
+        {"header": "Thông tin cần phản hồi/Thời hạn", "key": "deadline_or_response", "widthCm": 4.3}
+      ]
+    },
+    {"type": "heading", "text": "III. KẾT LUẬN", "style": "sectionHeading", "level": 1},
+    {"type": "paragraph", "source": "conclusion", "style": "body"},
+    {
+      "type": "signature",
+      "leftLabel": "{{signature_left}}",
+      "rightLabel": "{{signature_right}}",
+      "style": "infoTable"
+    }
+  ]
+}
